@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   get "posts/index" => "posts#index"
+
+  devise_for :users
+  get 'home/top' => "home#top"
+  resource :passwords, only: [:create]
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/' => "home#top"
 
