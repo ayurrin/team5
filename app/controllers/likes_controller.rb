@@ -10,4 +10,8 @@ class LikesController < ApplicationController
         redirect_to("/posts/#{params[:post_id]}")
     end
 
+    def show
+        @user = User.find(params[:id])
+
+    end
 end

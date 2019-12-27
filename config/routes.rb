@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get "posts/index" => "posts#index"
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
+  get "likes/show/:id" => "likes#show"
 
   devise_for :users
   get '/' => "home#top"

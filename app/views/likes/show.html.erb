@@ -1,0 +1,14 @@
+<h3>いいねしている投稿</h3>
+<% @user.liked_posts.each do |post| %>
+  投稿者：
+  <%= post.user.name %>
+  <br>
+  店名:
+  <%= post.content %>
+  <br>
+  <% if post.image? %>
+    <%= image_tag post.image.url %>
+  <% end %>
+  
+  <br>
+<% end %>
