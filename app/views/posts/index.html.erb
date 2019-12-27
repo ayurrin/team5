@@ -7,7 +7,14 @@
       <% if post.image? %>
         <%= image_tag post.image.url %>
       <% end %>
+    </div>
+      <% if user_signed_in? %>
+
+      <%= link_to("新規作成", "/posts/new") %>
+      <% else %>
+
+      <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+      <% end %>
 
     <% end %>
-  </div>
 </div>
