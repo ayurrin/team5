@@ -1,0 +1,14 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">編集する</h1>
+    
+
+    <%= form_for(@post, :url => {:controller => :posts, :action => :create}) do |f| %>
+      <p><%= f.label :店名 %></p>
+      <p><%= f.text_field :content, size: 100 %></p>
+      <p><%= f.label :画像 %></p>
+      <%= f.file_field :image %> 　　　
+      <p><%= f.submit "保存する" %></p>
+    <% end %>
+  </div>
+</div>
