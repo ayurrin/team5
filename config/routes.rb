@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   get "posts/index" => "posts#index"
+  post "likes/:post_id/create" => "likes#create"
+  post "likes/:post_id/destroy" => "likes#destroy"
 
   devise_for :users
-  get 'home/top' => "home#top"
-  resource :passwords, only: [:create]
-  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/' => "home#top"
+  resource :passwords, only: [:create]
+
+    
 
   get '/posts' => "posts#index"
   get "posts/new" => "posts#new"

@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
   def show
     @post = Post.find_by(id: params[:id])
+    @like = Like.new
   end
   
   def new
@@ -12,6 +13,7 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     @post.save
     redirect_to("/posts/index")
   end
