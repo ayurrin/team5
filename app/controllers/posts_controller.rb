@@ -26,9 +26,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find_by(id: params[:id])
-    @post.content = params[:content]
-    @post.image_url = params[:image]
-    @post.save
+    @post.update(post_params)
     redirect_to("/posts/index")
   end
 
