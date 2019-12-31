@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* posts/index ================================ */
 .posts-index-item {
-    padding: 20px 30px;
+    padding: 10px 15px;
     background-color: white;
     overflow: hidden;
-    box-shadow: 0 2px 6px #c1ced7;
+    // box-shadow: 0 2px 6px #c1ced7;
+    margin-bottom: 30px;
   }
   
   .post-left img {
@@ -36,6 +37,9 @@
     padding-left: 25px;
     text-align: left;
   }
+  .posts{
+    text-align: center;
+  }
   
   /* posts/show ================================ */
   .posts-show form {
@@ -57,11 +61,12 @@
     object-fit: cover;
   }
   .container img{
-    width: 300px;
-    height: 200px;
+    width: 600px;
+    height: 300px;
     box-shadow: 0 2px 6px #c1ced7;
     vertical-align: middle;
     object-fit: cover;
+    
 
   }
   
@@ -82,12 +87,13 @@
   }
   
   .post-menus {
-    float: right;
+    // float: right;
+    text-align: right;
   }
   
   .post-menus a, .post-menus input {
-    color: #8899a6;
-    text-decoration: underline;
+    color: gray;
+    text-decoration: none;
     font-size: 14px;
   }
   

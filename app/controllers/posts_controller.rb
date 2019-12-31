@@ -27,12 +27,12 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
+    @post.image_url = params[:image]
     @post.save
     redirect_to("/posts/index")
   end
 
   def destroy
-    # destroyアクションの中身を作成してください
     @post=Post.find_by(id: params[:id])
     @post.destroy
 

@@ -4,15 +4,79 @@
     <title>Kokoike</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="shortcut icon" href="https://service.tree-web.net/icon_converter/icon/91a5322bda362b2635cfe7b27f18ce5a_ol.ico">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
 
   <body>
+    <header>
+      <div class="header-logo">
+
+        
+        <%= link_to("Kokoike", "/") %>
+        
+      </div>
+      <ul class="header-menus">
+        <% if user_signed_in? %>
+        
+          <li>
+            <%= link_to("MY PAGE", "/user/#{current_user.id}") %>
+          </li>
+          <li>
+            <%= link_to("POST'S LIST", "/posts") %>
+          </li>
+          <li>
+            <%= link_to("NEW POST", "/posts/new") %>
+          </li>
+          <li>
+            <%= link_to("MAP", "/map") %>
+          </li>
+          <li>
+            <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to("Kokoikeとは", "/") %>
+          </li>
+          
+          
+          <li><%= link_to "LOGIN", new_user_session_path, class: 'post' %></li> <!-- ログイン画面に移行する -->
+          <li><%= link_to "SIGN UP", new_user_registration_path, class: 'post' %></li> <!-- 新規登録画面に移行する -->
+          
+        <% end %>
+      </ul>
+    </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
     <%= yield %>
+    <div class="footer">
+
+      <div class="footer-logo">
+        Kokoike
+      </div>
+      <div class="footer-menu">
+        <ul>
+        <li><a  href="https://www.facebook.com/ike.koko.14">FaceBook</a></li>
+        <li><a  href="https://www.instagram.com/kokoikeruyo/?hl=ja">Instagram</a></li>
+        <li><a  href="https://twitter.com/kokoike2">Twitter</a></li>
+        </ul>
+
+
+      </div>
+
+
+
+    </div>
+
+
   </body>
+
 </html>

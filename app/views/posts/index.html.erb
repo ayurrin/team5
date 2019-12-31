@@ -1,21 +1,18 @@
 <div class="main posts-index">
   <div class="container">
+  <div class="posts">
     <% @posts.each do |post| %>
       <div class="posts-index-item">
-        <%= link_to(post.content, "/posts/#{post.id}") %>
-      </div>
+        <h2><%= link_to(post.content, "/posts/#{post.id}") %></h2>
+      
       <% if post.image? %>
-        <%= image_tag post.image.url %>
+        <%= link_to image_tag(post.image.url), "/posts/#{post.id}" %>
+        
       <% end %>
-
+      </div>
     <% end %>
   </div>
-  <% if user_signed_in? %>
-    <%= link_to("新規作成", "/posts/new") %>
-  <% else %>
-    <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
-    <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
-  <% end %>
-
-
+  
+  </div>
+ 
 </div>
