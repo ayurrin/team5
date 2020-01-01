@@ -1,4 +1,4 @@
-<div class="main posts-show">
+<div class="posts-show">
   <div class="container">
     <div class="posts-show-item">
       <p>
@@ -10,9 +10,24 @@
       <% if @post.image? %>
         <%= image_tag @post.image.url %>
         <% end %>
+
+        
       <div class="post-menus">
+      
+        <% if current_user.already_liked?(@post) %>
+        <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+        いいねを取り消す<span class="fa fa-heart like-btn-unlike"></span>
+      <% end %>
+      <% else %>
+      <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+        いいね<span class="fa fa-heart like-btn"></span>
+      <% end %>
+      <% end %>
+
         <%= link_to("編集", "/posts/#{@post.id}/edit") %>
         <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+        
+
       </div>
       
         
