@@ -1,31 +1,178 @@
-<header>
-  <div class="header-logo">
-   <a href="/">ココイケ</a>
-  </div>
-  <ul class="header-menus">
-    <li>
-      <a href="/about">ココイケとは</a>
-    </li>
-  </ul>
-</header>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>KOKOIKE  </title>
+<meta name="description" content="KOKOIKE(ココイケ)は、友達がおすすめするレストランを表示してくれるアプリです。">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<link rel="shortcut icon" href="https://service.tree-web.net/icon_converter/icon/91a5322bda362b2635cfe7b27f18ce5a_ol.ico">
+<link rel="stylesheet" href="https://g-brothers.jp/wp-content/themes/greenbrothers/style.css" type="text/css" />
+<link rel="stylesheet" href="https://g-brothers.jp/wp-content/themes/greenbrothers/css/flexslider.css" type="text/css" />
+<link rel="stylesheet" href="https://g-brothers.jp/wp-content/themes/greenbrothers/css/style.css" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,700' rel='stylesheet' type='text/css'>
 
-<div class="main top-main">
-  <div class="top-message">
-    <h2>おいしかった飲食店をシェアしよう</h2>
-    <p>説明とか、ログインへのリンクとか？</p>
+<script src="https://g-brothers.jp/wp-content/themes/greenbrothers/js/jquery.js"></script>
+<script src="https://g-brothers.jp/wp-content/themes/greenbrothers/js/jquery.flexslider.js"></script>
+<script src="https://g-brothers.jp/wp-content/themes/greenbrothers/js/top.js"></script>
+<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>KOKOIKE &#8211; KOKOIKE(ココイケ)は、友達がおすすめのレストランを提案するアプリです</title>
+
+<meta name="google-site-verification" content="UTfPry4dgWFhqlKVHp4ycY6tCA-816046eyZSjbRm_Y" />
+
+<!--ここにプログラムがあった1-->
+<!--ここにプログラムがあった2-->
+
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='twentyfifteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='bootstrap-grid.css' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfifteen-style-css'  href='bootstrap-grid.css' type='text/css' media='all' />
+
+<script type='text/javascript' src='https://g-brothers.jp/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='https://g-brothers.jp/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<link rel='https://api.w.org/' href='https://g-brothers.jp/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://g-brothers.jp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://g-brothers.jp/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 4.4.21" />
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-74785242-1', 'auto');
+ ga('send', 'pageview');
+
+</script>
+</head>
+<body class="home blog">
+<div class="wrapper ">
+  <div class="wrapper-inner clearfix">
+    <div class="navi pc-not-view">
+
+      <nav>
+    <ul class="clearfix">
     <% if user_signed_in? %> <!-- ログインの確認-->
-  <!-- ログインしていた時の処理 -->
-  <h2> 現在 <%= current_user.name %> さんがログインしています </h2>
-  <h4> メールアドレス： <%= current_user.email %> </h4>
-  <p><%= link_to "マイページへ", user_path(current_user) %></p>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウト -->
-  <% else %>
-  <!-- ログインしていなかった時の処理 -->
-  <h2> 現在ログインしていません </h2>
-  <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
-  <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
-  <% end %>
-  </div>
-  <%= link_to("新規作成", "/posts/new") %>
 
+    <!-- ログインしていた時の処理 -->
+        <li><%= link_to("POST'S LIST", "/posts") %></li>
+			  <li><%= link_to("MAP", "/map") %></li>
+			  <li><%= link_to("My Page", "/users/#{current_user.id}") %></li>
+			  <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+    
+    
+    <% else %>
+    <!-- ログインしていなかった時の処理 -->
+    
+        <li><%= link_to "LOGIN", new_user_session_path, class: 'post' %></li> <!-- ログイン画面に移行する -->
+        <li><%= link_to "SIGN UP", new_user_registration_path, class: 'post' %></li> <!-- 新規登録画面に移行する -->
+    <% end %>
+    </div>
+  
+			  
+		</ul>
+</nav>
+      <div class="sns-box">
+  <ul class="clearfix">
+    <li><a class="facebook" href="https://www.facebook.com/ike.koko.14"></a></li>
+    <li><a class="instagram" href="https://www.instagram.com/kokoikeruyo/?hl=ja"></a></li>
+    <li><a class="twitter" href="https://twitter.com/kokoike2"></a></li>
+		<li><a class="tumblr" href="#"></a></li>
+  </ul>
 </div>
+    </div>
+    <div class="main">
+      <div class="header">
+        <div class="inner">
+          <div class="navi-btn pc-not-view">
+            <a href="#"><span></span><span></span><span></span></a>
+          </div>
+          <div class="navi sp-not-view">
+            <nav>
+						<ul class="clearfix">
+            <% if user_signed_in? %> <!-- ログインの確認-->
+            <!-- ログインしていた時の処理 -->
+                <li><%= link_to("POST'S LIST", "/posts") %></li>
+                <li><%= link_to("MAP", "/map") %></li>
+                <li><%= link_to("My Page", "/user/#{current_user.id}") %></li>
+                <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+                
+            
+            
+            <% else %>
+            <!-- ログインしていなかった時の処理 -->
+            
+                <li><%= link_to "LOGIN", new_user_session_path, class: 'post' %></li> <!-- ログイン画面に移行する -->
+                <li><%= link_to "SIGN UP", new_user_registration_path, class: 'post' %></li> <!-- 新規登録画面に移行する -->
+            <% end %>
+	</ul>
+</nav>
+          </div>
+        </div>
+      </div>
+<div class="contents">
+  <div class="flexslider main-slider">
+    <ul class="slides">
+          <li>
+        <div class="slides-image"><img src="https://wedge.ismedia.jp/mwimgs/1/8/900/img_1870e8e59583ba0f2fb0f91d3aab07c7391628.jpg" /></div>
+        <div class="slides-text">
+          <a href="">
+            <span class="slides-ttl">We offer the BEST restraurant</span>
+            <span class="slides-sub-ttl">Just for you!</span>
+          </a>
+        </div>
+      </li>
+          <li>
+        <div class="slides-image"><img src="https://i.ytimg.com/vi/KA9I4Ju6KOM/maxresdefault.jpg" /></div>
+        <div class="slides-text">
+          <a href="">
+            <span class="slides-ttl">For family, friends,<br>your love ones</span>
+            <span class="slides-sub-ttl">Let us take you on a sensational journey</span>
+          </a>
+        </div>
+      </li>
+          <li>
+        <div class="slides-image"><img src="https://www.sawanotsuru.co.jp/site/nihonshu-columm/wp-content/uploads/2018/08/8740-00004-1-1.jpg" /></div>
+        <div class="slides-text">
+          <a href="">
+            <span class="slides-ttl">No need for researching anymore</span>
+            <span class="slides-sub-ttl">The list is yours</span>
+          </a>
+        </div>
+      </li>
+          <li>
+        <div class="slides-image"><img src="https://media-assets.aumo.jp/uploads/photo/external_photo/data/38618/large_c1c1aa48-a72c-441c-b0a8-76cb945bd1b0.jpeg" /></div>
+        <div class="slides-text">
+          <a href="">
+            <span class="slides-ttl">Come and enjoy</span>
+            <span class="slides-sub-ttl">The best foods and atmosphere.</span>
+          </a>
+        </div>
+      </li>
+
+
+    </ul>
+  </div>
+  <div class="sp-not-view">
+    <div class="sns-box">
+  <ul class="clearfix">
+    <li><a class="facebook" href="https://www.facebook.com/ike.koko.14"></a></li>
+    <li><a class="instagram" href="https://www.instagram.com/kokoikeruyo/?hl=ja"></a></li>
+    <li><a class="twitter" href="https://twitter.com/kokoike2"></a></li>
+		<li><a class="tumblr" href="#"></a></li>
+  </ul>
+</div>
+
