@@ -2,7 +2,7 @@
   <div class="container">
     <div class="posts-show-item">
       <p>
-        <%= @post.content %>
+        <h2><%= @post.content %></h2>
       </p>
       <div class="post-time">
         <%= @post.created_at %>
@@ -10,7 +10,12 @@
       <% if @post.image? %>
         <%= image_tag @post.image.url %>
         <% end %>
-
+        <p>
+        <h3>住所：<%= @post.address %></h3>
+      </p>
+      <p>
+      <h3>コメント：<%= @post.comment %></h3>
+      </p>
         
       <div class="post-menus">
       

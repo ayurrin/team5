@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.save
-    redirect_to("/posts/index")
+    redirect_to("/posts")
   end
 
   def edit
@@ -27,20 +27,20 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.update(post_params)
-    redirect_to("/posts/index")
+    redirect_to("/posts")
   end
 
   def destroy
     @post=Post.find_by(id: params[:id])
     @post.destroy
 
-    redirect_to("/posts/index")
+    redirect_to("/posts")
   end
 
 private
 
     def post_params
-      params.require(:post).permit(:content, :image)
+      params.require(:post).permit(:content,:address,:comment, :image)
     end
 
     def sakilog
