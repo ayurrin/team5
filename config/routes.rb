@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/' => "home#top"
   resource :passwords, only: [:create]
 
-    
+
 
   get '/posts' => "posts#index"
   get "posts/new" => "posts#new"
@@ -17,5 +17,9 @@ Rails.application.routes.draw do
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
+
+  get 'maps/index'
+  root to: 'maps#index'
+  resources :maps, only: [:index]
 
 end
