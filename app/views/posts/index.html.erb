@@ -1,13 +1,18 @@
-<div class="main posts-index">
+<div class="posts-index">
   <div class="container">
+  <div class="posts">
     <% @posts.each do |post| %>
       <div class="posts-index-item">
-        <%= link_to(post.content, "/posts/#{post.id}") %>
-      </div>
+        <h2><%= link_to(post.content, "/posts/#{post.id}") %></h2>
+      
       <% if post.image? %>
-        <%= image_tag post.image.url %>
+        <%= link_to image_tag(post.image.url), "/posts/#{post.id}" %>
+        
       <% end %>
-
+      </div>
     <% end %>
   </div>
+  
+  </div>
+ 
 </div>
