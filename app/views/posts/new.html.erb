@@ -5,8 +5,13 @@
     <%= form_for(@post, :url => {:controller => :posts, :action => :create}) do |f| %>
       <p><%= f.label :店名 %></p>
       <p><%= f.text_field :content, size: 100 %></p>
+      <p><%= f.label :住所 %></p>
+      <p><%= f.text_field :address, size: 100 %></p>
+
       <p><%= f.label :画像 %></p>
-      <%= f.file_field :image %> 　　　
+      <%= f.file_field :image %> 　　
+      <p><%= f.label :コメント %></p>
+      <p><%= f.text_area :comment, :size=>"100x10" %></p>　　　　
       <p><%= f.submit "投稿する" %></p>
     <% end %>
   </div>

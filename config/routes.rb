@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get "posts/index" => "posts#index"
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
   get "likes/show/:id" => "likes#show"
@@ -23,10 +22,11 @@ Rails.application.routes.draw do
   get '/' => "home#top"
 
     
-
+  
   get '/posts' => "posts#index"
   get "posts/new" => "posts#new"
   get "posts/:id" => "posts#show"
+  get "user/posts/:id" => "posts#mypost"
   post "posts/create" => "posts#create"
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/update" => "posts#update"
