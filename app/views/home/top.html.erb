@@ -69,20 +69,25 @@ img.emoji {
 
     <!-- ログインしていた時の処理 -->
         <li><%= link_to("POST'S LIST", "/posts") %></li>
+<<<<<<< HEAD
 			  <li><%= link_to("MAP", "/map") %></li>
 			  <li><%= link_to("My Page", "/users/#{current_user.id}") %></li>
+=======
+			  <li><%= link_to("MAP", "/maps/#{current_user.id}") %></li>
+			  <li><%= link_to("My Page", "/user/#{current_user.id}") %></li>
+>>>>>>> gmap
 			  <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
-    
-    
+
+
     <% else %>
     <!-- ログインしていなかった時の処理 -->
-    
+
         <li><%= link_to "LOGIN", new_user_session_path, class: 'post' %></li> <!-- ログイン画面に移行する -->
         <li><%= link_to "SIGN UP", new_user_registration_path, class: 'post' %></li> <!-- 新規登録画面に移行する -->
     <% end %>
     </div>
-  
-			  
+
+
 		</ul>
 </nav>
       <div class="sns-box">
@@ -106,15 +111,20 @@ img.emoji {
             <% if user_signed_in? %> <!-- ログインの確認-->
             <!-- ログインしていた時の処理 -->
                 <li><%= link_to("POST'S LIST", "/posts") %></li>
+<<<<<<< HEAD
                 <li><%= link_to("MAP", "/map") %></li>
                 <li><%= link_to("My Page", "/users/#{current_user.id}") %></li>
+=======
+                <li><%= link_to("MAP", "/maps/#{current_user.id}") %></li>
+                <li><%= link_to("My Page", "/user/#{current_user.id}") %></li>
+>>>>>>> gmap
                 <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
-                
-            
-            
+
+
+
             <% else %>
             <!-- ログインしていなかった時の処理 -->
-            
+
                 <li><%= link_to "LOGIN", new_user_session_path, class: 'post' %></li> <!-- ログイン画面に移行する -->
                 <li><%= link_to "SIGN UP", new_user_registration_path, class: 'post' %></li> <!-- 新規登録画面に移行する -->
             <% end %>
