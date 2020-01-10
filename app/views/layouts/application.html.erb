@@ -24,7 +24,7 @@
         <% if user_signed_in? %>
 
           <li>
-            <%= link_to("MY PAGE", "/user/#{current_user.id}") %>
+            <%= link_to("MY PAGE", "/users/#{current_user.id}") %>
           </li>
           <li>
             <%= link_to("POST'S LIST", "/posts") %>
