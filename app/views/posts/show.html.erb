@@ -3,6 +3,7 @@
     <div class="posts-show-item">
       <p>
         <h2><%= @post.content %></h2>
+        投稿者：<%= @post.user.name %>
       </p>
       <div class="post-time">
         <%= @post.created_at %>

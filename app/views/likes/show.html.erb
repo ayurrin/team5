@@ -1,4 +1,6 @@
-<h3>いいねしている投稿</h3>
+<div class="container">
+<h1 class="form-heading">いいねしている投稿</h1>
+
 <% @user.liked_posts.each do |post| %>
   投稿者：
   <%= post.user.name %>
@@ -11,4 +13,9 @@
   <% end %>
   
   <br>
+  <div class="likes-menus">
+        <%= link_to("詳細", "/posts/#{post.id}") %>
+  </div>
 <% end %>
+
+</div>

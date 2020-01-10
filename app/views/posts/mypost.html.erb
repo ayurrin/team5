@@ -1,0 +1,24 @@
+<div class="container">
+<h1 class="form-heading"><%= @user.name %>さんの投稿</h1>
+<% @user.posts.each do |post| %>
+  <br>
+  店名:
+  <%= post.content %>
+  <br>
+  <% if post.image? %>
+    <%= image_tag post.image.url %>
+  <% end %>
+  
+  <br>
+    <div class="post-menus">
+        <%= link_to("詳細", "/posts/#{post.id}") %>
+
+        <%= link_to("編集", "/posts/#{post.id}/edit") %>
+        <%= link_to("削除", "/posts/#{post.id}/destroy", {method: "post"}) %>
+        
+
+    </div>
+      
+<% end %>
+
+</div>
