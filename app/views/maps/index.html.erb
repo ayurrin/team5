@@ -1,0 +1,123 @@
+<h2>gmap</h2>
+
+<!-- 地名入力用のinputを追加 -->
+<input id="address" type="textbox" value="Sydney, NSW">
+
+<!-- buttonをクリックしたらcodeAddressを実行　-->
+<input type="button" value="Encode" onclick="codeAddress()">
+<div id='map'>
+</div>
+
+<style>
+#map{
+  height: 400px;
+}
+</style>
+
+<script>
+/*
+mapを関数の外で定義(codeAddressでも使うため)
+geocoderを用意
+*/
+
+let map
+let geocoder
+let markers = []
+
+function initMap(){
+
+// Geolocation APIに対応している
+      if (navigator.geolocation) {
+        // 現在地を取得
+        navigator.geolocation.getCurrentPosition(
+          // 取得成功した場合
+          function(position) {
+            // 緯度・経度を変数に格納
+            var mapLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            // geocoderを初期化
+            geocoder = new google.maps.Geocoder()
+
+            map = new google.maps.Map(document.getElementById('map'), {
+            center: mapLatLng,
+            zoom: 8
+            });
+
+            //　マップにマーカーを表示する
+            var marker = new google.maps.Marker({
+              map : map,             // 対象の地図オブジェクト
+              position : mapLatLng   // 緯度・経度
+            });
+
+          },
+          // 取得失敗した場合
+          function(error) {
+            // エラーメッセージを表示
+            switch(error.code) {
+              case 1: // PERMISSION_DENIED
+                alert("位置情報の利用が許可されていません");
+                break;
+              case 2: // POSITION_UNAVAILABLE
+                alert("現在位置が取得できませんでした");
+                break;
+              case 3: // TIMEOUT
+                alert("タイムアウトになりました");
+                break;
+              default:
+                alert("その他のエラー(エラーコード:"+error.code+")");
+                break;
+            }
+          }
+        );
+      // Geolocation APIに対応していない
+      } else {
+        alert("この端末では位置情報が取得できません");
+      }
+      codeAddress();
+}
+
+function codeAddress(){
+  var geocoder = new google.maps.Geocoder();
+  // 入力を取得
+  //let inputAddress = document.getElementById('address').value;
+  let addresses = gon.posts_contents;
+
+  var bounds = new google.maps.LatLngBounds();
+  addresses.forEach(function(inputAddress){
+    // geocodingしたあとmapを移動
+    geocoder.geocode( { address: inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      // map.setCenterで地図が移動
+      let location = results[0].geometry.location;
+      // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+      markers.push(new google.maps.Marker({
+          map: map,
+          position: location,
+          animation: google.maps.Animation.DROP
+      }));
+      bounds.extend(location);
+      console.log(JSON.stringify(location));
+    }else{
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+    }
+    );
+  })
+  map.fitBounds(bounds);
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3BAYnTsHlkyZSzcQaSaJeoqFxmIwjweM&callback=initMap" async defer></script>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>位置情報取得サンプル2</title>
+
+  <!-- 動作処理 -->
+  <script>
+  </script>
+</head>
+<body>
+</body>
+</html>
