@@ -10,7 +10,7 @@
   <% end %>
   
   <br>
-  <% if @post.user_id==@current_user.id %>
+  <% if post.user_id==@current_user.id %>
     <div class="post-menus">
         <%= link_to("詳細", "/posts/#{post.id}") %>
 
