@@ -68,7 +68,7 @@ img.emoji {
     <% if user_signed_in? %> <!-- ログインの確認-->
     <!-- ログインしていた時の処理 -->
         <li><%= link_to("POST'S LIST", "/posts") %></li>
-			  <li><%= link_to("MAP", "/maps/index") %></li>
+			  <li><%= link_to("MAP", "/maps/#{current_user.id}") %></li>
 			  <li><%= link_to("My Page", "/user/#{current_user.id}") %></li>
 			  <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
 
@@ -105,7 +105,7 @@ img.emoji {
             <% if user_signed_in? %> <!-- ログインの確認-->
             <!-- ログインしていた時の処理 -->
                 <li><%= link_to("POST'S LIST", "/posts") %></li>
-                <li><%= link_to("MAP", "/map") %></li>
+                <li><%= link_to("MAP", "/maps/#{current_user.id}") %></li>
                 <li><%= link_to("My Page", "/user/#{current_user.id}") %></li>
                 <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= include_gon %>
     <title>Kokoike</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -32,7 +33,7 @@
             <%= link_to("NEW POST", "/posts/new") %>
           </li>
           <li>
-            <%= link_to("MAP", "/maps/index") %>
+            <%= link_to("MAP", "/maps/#{current_user.id}") %>
           </li>
           <li>
             <%= link_to "LOGOUT", destroy_user_session_path, method: :delete %>

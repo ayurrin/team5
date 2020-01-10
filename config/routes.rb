@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
 
-  get 'maps/index'
-  root to: 'maps#index'
-  resources :maps, only: [:index]
+  get 'maps/:id'  => "maps#index"
+  # root to: 'maps#index'
+  # resources :maps, only: [:index]
 
 end

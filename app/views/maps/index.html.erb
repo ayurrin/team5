@@ -79,7 +79,7 @@ function codeAddress(){
   var geocoder = new google.maps.Geocoder();
   // 入力を取得
   //let inputAddress = document.getElementById('address').value;
-  let addresses = ["Japan Kumamoto","Japan Fukuoka","Japan Kagoshima","Japan Ooita","Japan Miyazaki","Japan Okinawa","Japan Shiga"];
+  let addresses = gon.posts_contents;
 
   var bounds = new google.maps.LatLngBounds();
   addresses.forEach(function(inputAddress){
