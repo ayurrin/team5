@@ -17,7 +17,7 @@
       <p>
       <h3>コメント：<%= @post.comment %></h3>
       </p>
-        
+      <% if @post.user_id==@current_user.id %>
       <div class="post-menus">
       
         <% if current_user.already_liked?(@post) %>
@@ -32,7 +32,7 @@
 
         <%= link_to("編集", "/posts/#{@post.id}/edit") %>
         <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
-        
+        <% end %>
 
       </div>
       
