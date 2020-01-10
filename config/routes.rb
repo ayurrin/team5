@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'home/top' => "home#top"
   resource :passwords, only: [:create]
 
+
   get '/' => "home#top"
   get '/maps' => "maps#index"
 
@@ -32,5 +33,9 @@ Rails.application.routes.draw do
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
+
+  get 'maps/:id'  => "maps#index"
+  # root to: 'maps#index'
+  # resources :maps, only: [:index]
 
 end
