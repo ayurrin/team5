@@ -1,0 +1,781 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	border: 0;
+	outline: 0;
+	background: transparent;
+}
+
+body {
+	line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+a {
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	margin: 1em 0;
+	padding: 0;
+	border: 0;
+	border-top: 1px solid #ccc;
+}
+
+input,
+select {
+	vertical-align: middle;
+}
+
+ol,
+ul,
+li {
+	list-style: none;
+}
+
+img {
+	font-size: 0;
+	line-height: 0;
+	vertical-align: top;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: ' ';
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Here are example usages in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+`display: inline-block` sprite:
+<img class="icon-home" />
+*/
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Here are example usages in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+`display: inline-block` sprite:
+<img class="icon-home" />
+*/
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+
+body {
+	font-family: 'Source Sans Pro', 'Lucida Grande', '繝偵Λ繧ｮ繝手ｧ偵ざ ProN W3', 'Hiragino Kaku Gothic ProN', '繝｡繧､繝ｪ繧ｪ', Meiryo, Helvetica, Arial, sans-serif;
+	width: 100%;
+	min-width: 320px;
+	color: #333;
+	-webkit-text-size-adjust: 100%;
+}
+
+input,
+textarea,
+select {
+	font-family: 'Source Sans Pro', 'Lucida Grande', '繝偵Λ繧ｮ繝手ｧ偵ざ ProN W3', 'Hiragino Kaku Gothic ProN', '繝｡繧､繝ｪ繧ｪ', Meiryo, Helvetica, Arial, sans-serif;
+	box-sizing: border-box;
+}
+
+.pc-not-view {
+	display: none;
+}
+
+.d-table {
+	display: table;
+	width: 100%;
+}
+
+.d-tr {
+	display: table-row-group;
+}
+
+.d-td {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	min-height: 800px;
+	background-color: #ccc;
+}
+
+.wrapper .wrapper-inner.active {
+	left: 0;
+}
+
+.header {
+	border-top: 5px solid #008e34;
+	background-color: #fff;
+}
+
+.header .inner {
+	position: relative;
+	margin: 0 0 0 50px;
+}
+
+.header .navi-btn {
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	margin-top: -10px;
+}
+
+.header .navi-btn a {
+	display: block;
+	width: 30px;
+	height: 19px;
+}
+
+.header .navi-btn a span {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: #097c25;
+}
+
+.header .navi-btn a span:nth-child(1) {
+	top: 0;
+}
+
+.header .navi-btn a span:nth-child(2) {
+	top: 50%;
+	margin-top: -1.5px;
+}
+
+.header .navi-btn a span:nth-child(3) {
+	bottom: 0;
+}
+
+.header .logo {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin: -25px 0 0 0;
+}
+
+.navi {
+	min-height: calc(1em + 10px);
+	margin: 0 0 0 320px;
+	padding: 30px 0;
+}
+
+.navi .logo {
+	padding: 10px 20px;
+	border-bottom: 1px solid #dadada;
+}
+
+.navi ul {
+	overflow: hidden;
+	margin: 0 -10px;
+}
+
+.navi ul li {
+	float: left;
+}
+
+.navi ul li a {
+	font-size: 15px;
+	display: block;
+	margin: 5px 10px;
+	text-decoration: none;
+	color: #000;
+}
+
+.navi ul li a[href='#'] {
+	cursor: default;
+	color: #ccc;
+}
+
+.navi .sns-box {
+	padding: 10px 0;
+}
+
+.navi .sns-box ul li {
+	float: left;
+	width: 25%;
+}
+
+.navi .sns-box ul li a {
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+}
+
+.navi .sns-box ul li a[href='#'] {
+	cursor: default;
+	opacity: .3;
+}
+
+.main {
+	position: relative;
+}
+
+.home .contents {
+	position: relative;
+}
+
+.home .contents .main-slider {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	border: 0;
+}
+
+.home .contents .main-slider .flex-prev {
+	left: 30px !important;
+	width: 58px;
+	height: 58px;
+	margin-top: -29px;
+	-webkit-transition: none;
+	transition: none;
+	opacity: 1 !important;
+	background-image: url(../images/pc/common/sprite.png);
+	background-position: -240px 0;
+}
+
+.home .contents .main-slider .flex-prev:before {
+	display: none;
+}
+
+.home .contents .main-slider .flex-next {
+	right: 30px !important;
+	width: 58px;
+	height: 58px;
+	margin-top: -29px;
+	-webkit-transition: none;
+	transition: none;
+	opacity: 1 !important;
+	background-image: url(../images/pc/common/sprite.png);
+	background-position: -240px -58px;
+}
+
+.home .contents .main-slider .flex-next:before {
+	display: none;
+}
+
+.home .contents .main-slider .slides .flex-active-slide .slides-image img {
+	-webkit-transition: -webkit-transform 30s;
+	transition: -webkit-transform 30s;
+	transition: transform 30s;
+	transition: transform 30s, -webkit-transform 30s;
+	-webkit-transform: scale(1, 1);
+	transform: scale(1, 1);
+}
+
+.home .contents .main-slider .slides .flex-active-slide .slides-ttl {
+	margin-left: 0;
+	-webkit-transition: all 2s 0s;
+	transition: all 2s 0s;
+	-webkit-transition-property: opacity, margin;
+	transition-property: opacity, margin;
+	opacity: 1;
+}
+
+.home .contents .main-slider .slides .flex-active-slide .slides-sub-ttl {
+	margin-left: 0;
+	-webkit-transition: all 2s 1s;
+	transition: all 2s 1s;
+	-webkit-transition-property: opacity, margin;
+	transition-property: opacity, margin;
+	opacity: 1;
+}
+
+.home .contents .main-slider .slides li {
+	position: relative;
+}
+
+.home .contents .main-slider .slides li a {
+	display: block;
+}
+
+.home .contents .main-slider .slides li .slides-image {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.home .contents .main-slider .slides li .slides-image img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	max-width: none;
+	-webkit-transition: -webkit-transform 1s 2s;
+	transition: -webkit-transform 1s 2s;
+	transition: transform 1s 2s;
+	transition: transform 1s 2s, -webkit-transform 1s 2s;
+	-webkit-transform: scale(1.2, 1.2);
+	transform: scale(1.2, 1.2);
+}
+
+.home .contents .main-slider .slides li .slides-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: table;
+}
+
+.home .contents .main-slider .slides li .slides-ttl {
+	font-size: 60px;
+	font-weight: lighter;
+	display: block;
+	margin-bottom: 5px;
+	margin-left: -40px;
+	opacity: 0;
+}
+
+.home .contents .main-slider .slides li .slides-sub-ttl {
+	font-size: 35px;
+	font-weight: lighter;
+	display: block;
+	margin-left: -40px;
+	opacity: 0;
+}
+
+.home .contents .main-slider .slides li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.home .contents .sns-box {
+	position: absolute;
+	z-index: 2;
+	bottom: 50px;
+	left: 50%;
+	margin-left: -180px;
+}
+
+.home .contents .sns-box ul {
+	overflow: hidden;
+	margin: 0 -20px;
+}
+
+.home .contents .sns-box ul li {
+	float: left;
+}
+
+.home .contents .sns-box ul li a {
+	display: block;
+	margin: 0 20px;
+}
+
+.home .contents .sns-box ul li a[href='#'] {
+	cursor: default;
+	opacity: .3;
+}
+
+.home .contents .sns-box .facebook {
+	display: block;
+	width: 120px;
+	width: 60px;
+	height: 120px;
+	height: 60px;
+	background-image: url(../images/pc/common/sprite.png);
+	background-position: 0 0;
+	background-position: 0 0;
+	background-size: 149px 120px;
+}
+
+.home .contents .sns-box .instagram {
+	display: block;
+	width: 120px;
+	width: 60px;
+	height: 120px;
+	height: 60px;
+	background-image: url(../images/pc/common/sprite.png);
+	background-position: -120px 0;
+	background-position: -60px 0;
+	background-size: 149px 120px;
+}
+
+.home .contents .sns-box .tumblr {
+	display: block;
+	width: 120px;
+	width: 60px;
+	height: 120px;
+	height: 60px;
+	background-image: url(../images/pc/common/sprite.png);
+	background-position: 0 -120px;
+	background-position: 0 -60px;
+	background-size: 149px 120px;
+}
+
+.home .contents .sns-box .twitter {
+	display: block;
+	width: 120px;
+	width: 60px;
+	height: 120px;
+	height: 60px;
+	background-image: url(../images/pc/common/sprite.png);
+	background-position: -120px -120px;
+	background-position: -60px -60px;
+	background-size: 149px 120px;
+}
+
+@media screen and (max-width: 767px) {
+
+img {
+	max-width: 100%;
+}
+
+.pc-not-view {
+	display: block;
+}
+
+.sp-not-view {
+	display: none;
+}
+
+.wrapper {
+	min-height: 0;
+}
+
+.wrapper .wrapper-inner {
+	position: absolute;
+	top: 0;
+	left: -195px;
+	width: calc(100% + 195px);
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+.header .inner {
+	margin: 0;
+}
+
+.header .logo {
+	position: static;
+	width: 145px;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+.navi {
+	float: left;
+	overflow: auto;
+	width: 195px;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+
+.navi ul {
+	margin: 0;
+}
+
+.navi ul li {
+	float: none;
+}
+
+.navi ul li a {
+	margin: 0;
+	padding: 15px 0 15px 20px;
+	border-bottom: 1px solid #dadada;
+}
+
+.navi .sns-box ul li a {
+	-webkit-transform: scale(.8);
+	transform: scale(.8);
+}
+
+.navi .sns-box ul li .facebook {
+	display: block;
+	width: 60px;
+	width: 30px;
+	height: 60px;
+	height: 30px;
+	background-image: url(../images/sp/common/sprite.png);
+	background-position: 0 -60px;
+	background-position: 0 -30px;
+	background-size: 90px 60px;
+}
+
+.navi .sns-box ul li .instagram {
+	display: block;
+	width: 60px;
+	width: 30px;
+	height: 60px;
+	height: 30px;
+	background-image: url(../images/sp/common/sprite.png);
+	background-position: -60px -60px;
+	background-position: -30px -30px;
+	background-size: 90px 60px;
+}
+
+.navi .sns-box ul li .tumblr {
+	display: block;
+	width: 60px;
+	width: 30px;
+	height: 60px;
+	height: 30px;
+	background-image: url(../images/sp/common/sprite.png);
+	background-position: -120px 0;
+	background-position: -60px 0;
+	background-size: 90px 60px;
+}
+
+.navi .sns-box ul li .twitter {
+	display: block;
+	width: 60px;
+	width: 30px;
+	height: 60px;
+	height: 30px;
+	background-image: url(../images/sp/common/sprite.png);
+	background-position: -120px -60px;
+	background-position: -60px -30px;
+	background-size: 90px 60px;
+}
+
+.main {
+	float: left;
+	width: 100vw;
+}
+
+.home .contents .main-slider .flex-prev {
+	left: 10px !important;
+	display: block;
+	width: 60px;
+	width: 30px;
+	height: 60px;
+	height: 30px;
+	margin-top: -15px;
+	background-image: url(../images/sp/common/sprite.png);
+	background-position: 0 0;
+	background-position: 0 0;
+	background-size: 90px 60px;
+}
+
+.home .contents .main-slider .flex-next {
+	right: 10px !important;
+	display: block;
+	width: 60px;
+	width: 30px;
+	height: 60px;
+	height: 30px;
+	margin-top: -15px;
+	background-image: url(../images/sp/common/sprite.png);
+	background-position: -60px 0;
+	background-position: -30px 0;
+	background-size: 90px 60px;
+}
+
+.home .contents .main-slider .slides li .slides-ttl {
+	font-size: 25px;
+	font-weight: normal;
+	margin-left: -20px;
+}
+
+.home .contents .main-slider .slides li .slides-sub-ttl {
+	font-size: 15px;
+	font-weight: normal;
+	margin-left: -20px;
+}
+
+}
+
+@-webkit-keyframes loader {
+
+100% {
+	background-position: -880px 0;
+}
+
+}
+
+@keyframes loader {
+
+100% {
+	background-position: -880px 0;
+}
+
+}
+
+@-webkit-keyframes loaderSP {
+
+100% {
+	background-position: -440px 0;
+}
+
+}
+
+@keyframes loaderSP {
+
+100% {
+	background-position: -440px 0;
+}
+
+}
