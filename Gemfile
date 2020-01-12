@@ -62,3 +62,4 @@ gem 'carrierwave'
 gem 'devise'
 
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
+gem 'bullet'

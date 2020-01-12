@@ -30,4 +30,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
   #フォロワーの一覧ページ
+  def timeline
+    @user = User.find(params[:user_id])
+    @follow_users = @user.all_following
+    @post =Post.all.where(user_id:@follow_users)
+  end
 end

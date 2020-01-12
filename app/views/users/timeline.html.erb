@@ -1,0 +1,20 @@
+<div class="timeline">
+  <h2><%= current_user.name %>さんのタイムライン</h2>
+  <% @post.each do |post| %>
+    投稿者：
+    <%= post.user.name %>
+    <br>
+    店名:
+    <%= post.content %>
+    <br>
+    <% if post.image? %>
+      <%= image_tag post.image.url %>
+    <% end %>
+
+    <br>
+    <div class="timeline-menus">
+          <%= link_to("詳細", "/posts/#{post.id}") %>
+    </div>
+
+</div>
+<% end %>

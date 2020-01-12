@@ -15,15 +15,16 @@ Rails.application.routes.draw do
 
   get 'users/follow_list/:user_id' => 'users#follow_list'
   get 'users/follower_list/:user_id' => 'users#follower_list'
+  get 'users/timeline/:user_id' => 'users#timeline'
   #フォロー・フォロワーの一覧ページ
   get 'home/top' => "home#top"
   resource :passwords, only: [:create]
 
 
   get '/' => "home#top"
+  get '/maps' => "maps#index"
 
-    
-  
+
   get '/posts' => "posts#index"
   get "posts/new" => "posts#new"
   get "posts/:id" => "posts#show"
